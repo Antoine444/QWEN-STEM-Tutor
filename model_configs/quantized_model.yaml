@@ -1,0 +1,19 @@
+model:
+  base_params:
+    # Change <HF_USERNAME_team_member_QUANTIZED> to your own Huggingface username that holds the repo MNLP_M3_quantized_model
+    # (Optional) If you want to use a chat template, set "use_chat_template=true" after revision.
+    # (Optional) However, you must ensure that the chat template is saved in the model checkpoint.
+    model_args: "pretrained=najabba/MNLP_M3_quantized_model,revision=main" 
+    
+    # If your model already has a quantization config as part of the model config, specify this as "none".
+    # Otherwise. specify the model to be loaded in 4 bit. The other option is to use "8bit" quantization.
+    dtype: "none"
+    compile: false
+
+  # Ignore this section, do not modify!
+  merged_weights:
+    delta_weights: false
+    adapter_weights: false
+    base_model: null
+  generation:
+    temperature: 0.0

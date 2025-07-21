@@ -1,0 +1,25 @@
+model:
+  base_params:
+    # Change this to your own model name on huggingface hub
+    model_args: "pretrained=imaneb942/MNLP_M3_rag_model,revision=main,trust_remote_code=true"
+
+    # (Optional) If you want to use a chat template, set "use_chat_template" to true.
+    # (Optional) However, you must ensure that the chat template is saved in the model checkpoint.
+    use_chat_template: false
+    
+    dtype: "float16"
+    compile: false
+  rag_params:
+    embedding_model: "imaneb942/MNLP_M3_document_encoder" # Change this to your own embedding model name on huggingface hub
+    docs_name_or_path: "imaneb942/MNLP_M3_rag_documents" # Change this to your own document name or path on huggingface hub
+    similarity_fn: cosine # Select the similarity function to use, options are: cosine, dot_product, max_inner_product, jaccard
+    top_k: 13 # Choose the number of documents to retrieve
+    num_chunks: 100000 # This is the limit we set for the number of chunks to retrieve from the document where each chunk is 512 tokens
+
+  # Ignore this section, do not modify!
+  merged_weights:
+    delta_weights: false
+    adapter_weights: false
+    base_model: null
+  generation:
+    temperature: 0.0

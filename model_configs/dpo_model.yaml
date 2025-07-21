@@ -1,0 +1,19 @@
+model:
+  base_params:
+    # Change <HF_USERNAME_team_member_DPO> to your own Huggingface username that holds the repo MNLP_M3_dpo_model.
+    # (Optional) If you want to use a chat template, set "use_chat_template=true" after revision.
+    # (Optional) However, you must ensure that the chat template is saved in the model checkpoint.
+    model_args: "pretrained=derko83/MNLP_M3_dpo_model,revision=main" 
+    use_chat_template: false
+    dtype: "float16"
+    compile: false
+    # Set to "none" if you use reference model in your training, otherwise, specify the normalization type for your reference-free DPO inference: avg, sum, or norm
+    ref_free_norm: "none" 
+
+  # Ignore this section, do not modify!
+  merged_weights:
+    delta_weights: false
+    adapter_weights: false
+    base_model: null
+  generation:
+    temperature: 0.0

@@ -1,0 +1,17 @@
+model:
+  base_params:
+    ## Change <HF_USERNAME_team_member_MCQA> to your own Huggingface username that holds the repo MNLP_M3_mcqa_model.
+    # (Optional) If you want to use a chat template, set "use_chat_template=true" after revision.
+    # (Optional) However, you must ensure that the chat template is saved in the model checkpoint.
+    model_args: "pretrained=antoine-444/MNLP_M3_mcqa_model,revision=main"
+    use_chat_template: false
+    dtype: "float16"
+    compile: false
+
+  # Ignore this section, do not modify!
+  merged_weights:
+    delta_weights: false
+    adapter_weights: false
+    base_model: null
+  generation:
+    temperature: 0.0

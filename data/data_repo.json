@@ -1,0 +1,6 @@
+{
+    "dpo_dataset_repo_id": "derko83/MNLP_M3_dpo_dataset",
+    "mcqa_dataset_repo_id": "antoine-444/MNLP_M3_mcqa_dataset",
+    "quantized_mcqa_dataset_repo_id": "najabba/MNLP_M3_quantized_dataset",
+    "rag_mcqa_dataset_repo_id": "imaneb942/MNLP_M3_rag_dataset"
+}
